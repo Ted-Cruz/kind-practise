@@ -1,0 +1,47 @@
+prometheus:
+  prometheusSpec:
+    nodeSelector:
+      node-role.kubernetes.io/control-plane: ""
+    tolerations:
+      - key: "node-role.kubernetes.io/control-plane"
+        operator: "Exists"
+        effect: "NoSchedule"
+
+kube-state-metrics:
+  nodeSelector:
+    node-role.kubernetes.io/control-plane: ""
+  tolerations:
+    - key: "node-role.kubernetes.io/control-plane"
+      operator: "Exists"
+      effect: "NoSchedule"
+
+nodeExporter:
+  enabled: true
+
+kubelet:
+  enabled: true
+  serviceMonitor:
+    enabled: true
+    cAdvisor: true
+
+
+
+# prometheus:
+#   prometheusSpec:
+#     nodeSelector:
+#       node-role.kubernetes.io/control-plane: ""
+#     tolerations:
+#       - key: "node-role.kubernetes.io/control-plane"
+#         operator: "Exists"
+#         effect: "NoSchedule"
+
+# kube-state-metrics:
+#   nodeSelector:
+#     node-role.kubernetes.io/control-plane: ""
+#   tolerations:
+#     - key: "node-role.kubernetes.io/control-plane"
+#       operator: "Exists"
+#       effect: "NoSchedule"
+
+# nodeExporter:
+#   enabled: true
