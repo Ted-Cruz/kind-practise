@@ -1,18 +1,17 @@
 ### 目標：
 
-✅ 安裝 Docker、kubectl、kind go kubectl  docker-compose、Helm確認基本執行環境無誤
-✅ 使用 kind 成功架設一個 Kubernetes 叢集：
-1 個 control-plane 節點 3 個 worker 節點 其中 1 個 worker 節點標記為 infra node，其他 2 個為 application node    
-✅ 安裝 MetalLB 並採用 Layer2 模式
-✅ 設定 MetalLB speaker 僅部署在 infra node
-✅ 建立 NGINX Deployment 並透過 LoadBalancer Service 暴露服務
-✅ 成功將 LoadBalancer 的 NodePort 指定對應到 host 已開放的 port
-✅ 驗證可透過 curl 與 瀏覽器 從 host 訪問 nginx 網頁 → 功能完全正常
-✅使用Locust進行壓力測試
-✅確認Pod有根據流量擴張
-![garfana](https://hackmd.io/_uploads/SJixrELgll.png)
+✅ 安裝 Docker、kubectl、kind go kubectl  docker-compose、Helm確認基本執行環境無誤   
+✅ 使用 kind 成功架設一個 Kubernetes 叢集：1 個 control-plane 節點 3 個 worker 節點 其中 1 個 worker 節點標記為 infra node，其他 2 個為 application node    
+✅ 安裝 MetalLB 並採用 Layer2 模式   
+✅ 設定 MetalLB speaker 僅部署在 infra node   
+✅ 建立 NGINX Deployment 並透過 LoadBalancer Service 暴露服務   
+✅ 成功將 LoadBalancer 的 NodePort 指定對應到 host 已開放的 port   
+✅ 驗證可透過 curl 與 瀏覽器 從 host 訪問 nginx 網頁 → 功能完全正常   
+✅使用Locust進行壓力測試   
+✅確認Pod有根據流量擴張   
+![Grafana 畫面](garfana.png)
 
-![locust](https://hackmd.io/_uploads/HyJlSNLxgg.png)
+![Locust 測試結果](locust.png)
 
 
 ### 壓力測試結果
